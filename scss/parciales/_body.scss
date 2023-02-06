@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+
+  .form-main{
+    padding: 30px;
+    background-color: #8AA6A3;
+    border: 3px solid #127369;
+  }
+
+
+  .form-signin{
+    width: 350px;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: 10px;
+
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+
+  }
+  
+
+  .tab-style {
+    flex-wrap: nowrap;
+    color: black;
+    background-color: #8AA6A3;
+    border: none;
+  }
+
+  .nav-tabs .nav-link.active, .nav-link{
+    background-color: #8AA6A3;
+    color: black;
+    border: none !important;
+  }
+
+  .nav-tabs:hover{
+    background-color: #8AA6A3;
+    color :#127369;
+  }
+  .nav-link:hover{
+    background-color: #8AA6A3;
+    color :#127369;
+    border: none;
+  }
+
+  
+  
+
+  .node-bg{
+    background-color: #8AA6A3;
+    border-color: #127369;
+    color: black;
+
+  }
