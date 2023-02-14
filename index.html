@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/main.css">
+    <link rel="shortcut icon" href="./media/FONDO NEGRO.png" type="image/x-icon">
     <title>BRAVE - INICIO</title>
     
 </head>
@@ -27,13 +28,13 @@
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                     <div class="content">
-                        <div class="d-flex flex-column align-items-center ">
-                            <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="70" height="57">
-                            <h1 class="mb-3">BRAVE</h1>
-                        </div>
+                      <div class="d-flex flex-column align-items-center ">
+                        <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="100" >
+                        <h1 class="mb-3">BRAVE</h1>
+                      </div>
                         <h6 class="mb-3" >Ingresa un monto para calcular los impuestos</h6>
                         <div class="input-group mb-3">
-                          <input id="calculador" type="number" class="form-control" placeholder="$" aria-label="Example text with two button addons">
+                          <input id="calculador" type="number" class="form-control" placeholder="$" >
                         </div>
                         <div class="d-flex justify-content-between mt-3">
                           <p>Cotización dólar oficial</p>
@@ -54,7 +55,7 @@
                           </div>
                           <hr>
                         <div class="d-flex justify-content-between">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheck">
+                          <input class="form-check-input " type="checkbox" value="" id="flexCheck">
                           <label class="form-check-label" for="flexCheckDefault">
                             + Imp. Dólar Qatar (25%)
                           </label>
@@ -70,7 +71,7 @@
                   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                     <div class="content">
                       <div class="d-flex flex-column align-items-center ">
-                          <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="70" height="57">
+                          <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="100">
                           <h1 class="mb-3">BRAVE</h1>
                       </div>
                       <h6 class="mb-3" >Ingrese un producto para calcular el IVA</h6>
@@ -83,26 +84,25 @@
                         </div>
                       </div>
                       <div class="container mt-2">
-                        <button type="button" id="btn-agregarProducto" class="btn btn-dark" type="button">Calcular</button>
+                        <button type="button" id="btn-agregarProducto" class="btn-calculo" type="button">CALCULAR</button>
                       </div>
-                      
                   </div>
                   </div>
                   <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                     <div class="content-historial">
                       <div class="d-flex flex-column align-items-center ">
-                        <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="70" height="57">
+                        <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="100">
                         <h1 class="mb-3">BRAVE</h1>
                       </div>
                       <div id="container">
-                        <button type="button" id="btn-historial" class="btn rrr mb-3" >VER HISTORIAL (IVA)</button>
+                        <button type="button" id="btn-historial" class="btn rrr mb-3 btn-calculo" >VER HISTORIAL</button>
                       </div>
                       
                       <div class="dropdown container d-flex">
                         <form class="d-flex" role="search">
                           <input id="buscador" class="form-control me-2" type="search" placeholder="Busqueda por producto" aria-label="Search">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ordenar de
+                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ORDENAR DE
                           </button>
                         </form>
                         <ul class="dropdown-menu">
@@ -110,14 +110,18 @@
                           <li><button id="menorMayor" class="dropdown-item" type="button">Menor a mayor</button></li>
                         </ul>
                       </div>
-                      
+                      <div class="mt-4" id="coincidencia" ></div>
+                      <div class="container node-bg"  id="historial-btn"></div>
+                      </div>
                     <div class="container node-bg"  id="historial-btn">
                   </div>
                 </div>
           </form>
+          
         </main>        
     </body>
 <script src="./js/script.js"></script>
 <script src="./js/class.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

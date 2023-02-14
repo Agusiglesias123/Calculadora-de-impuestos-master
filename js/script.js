@@ -26,9 +26,6 @@ function ordenarMayormenor(array){
 }
 
 
- 
-
-
 // Ver y ocultar el catologo
 
 let historialProductos = document.getElementById("historial-btn") 
@@ -83,16 +80,41 @@ botonAgregarIVA.addEventListener("click", () => {cargarProducto(estanteria)})
 let inputProducto = document.getElementById("nombreProducto")
 let inputPrecio = document.getElementById("nombrePrecio")
 
+
+
 function cargarProducto(array) {
     let inputProducto = document.getElementById("nombreProducto");
-    let inputPrecio = document.getElementById("nombrePrecio")
+    let inputPrecio = document.getElementById("nombrePrecio");
     let IVA = inputPrecio.value * 1.21;
     const ProductoNuevo = new productos(array.length+1, inputProducto.value, inputPrecio.value, IVA)
-    array.push(ProductoNuevo) 
-    // verHistorial(array)
+    if(inputPrecio.value != "" && inputProducto.value != ""){
+        array.push(ProductoNuevo) 
+        localStorage.setItem("estanteria", JSON.stringify(array))
+        Swal.fire({
+            icon: 'success',
+            title: 'El producto se agrego correctamente',
+            background: '#fff',
+            color: 'black',
+            confirmButtonColor: 'black',
+            iconColor: '#33c733',
+            backdrop: `#33c733
+            url("/media/topography.svg")`
+          })
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'Por favor complete todos los campos',
+            background: '#fffd',
+            color: 'black',
+            confirmButtonColor: 'black',
+            iconColor: 'red',
+            backdrop: `#c71717
+            url("/media/topography.svg")`
+          })
+    }
     inputProducto.value = ""
     inputPrecio.value = ""
-    localStorage.setItem("estanteria", JSON.stringify(array))
 }
 
 
@@ -105,6 +127,7 @@ let inputQatar = document.getElementById("inputQatar");
 let checkbox = document.getElementById("flexCheck")
 let btnTotal = document.getElementById("totalCimp")
 let inputCalculo = document.getElementById("calculador");
+let coincidencia = document.getElementById("coincidencia")
 
 
 
@@ -165,5 +188,12 @@ function buscarInfo (buscado, array){
     let busquedaArray = array.filter(
         (productos) => productos.producto.toLowerCase().includes(buscado.toLowerCase()) 
     )
+    if (busquedaArray.length == 0) {
+        coincidencia.innerHTML = `<h5> No hay productos con ese nombre</h5>`
+        verHistorial(busquedaArray)
+    } else {
+    coincidencia.innerHTML = ""
     verHistorial(busquedaArray)
+    }
 }
+
