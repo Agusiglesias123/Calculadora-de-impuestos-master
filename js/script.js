@@ -93,12 +93,12 @@ function cargarProducto(array) {
         Swal.fire({
             icon: 'success',
             title: 'El producto se agrego correctamente',
-            background: '#fff',
+            background: '#fff ',
             color: 'black',
             confirmButtonColor: 'black',
             iconColor: '#33c733',
             backdrop: `#33c733
-            url("/media/topography.svg")`
+            url("./media/topography.svg")`
           })
     }else{
         Swal.fire({
@@ -110,7 +110,7 @@ function cargarProducto(array) {
             confirmButtonColor: 'black',
             iconColor: 'red',
             backdrop: `#c71717
-            url("/media/topography.svg")`
+            url("./media/topography.svg")`
           })
     }
     inputProducto.value = ""
