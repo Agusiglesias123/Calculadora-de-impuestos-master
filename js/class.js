@@ -8,7 +8,6 @@ class productos {
         this.precioIVA = precioIVA
     }
 }
-
 const productos1= new productos(1,"Arroz",200, 242)
 
 const productos2 = new productos(2,"Atun",700, 847)
