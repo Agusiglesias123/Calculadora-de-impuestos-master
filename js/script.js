@@ -26,12 +26,32 @@ function ordenarMayormenor(array){
 }
 
 
-// Ver y ocultar el catologo
+
+// capturas DOM
 
 let historialProductos = document.getElementById("historial-btn") 
 let VERhistorialProductos = document.getElementById("btn-historial") 
+let botonAgregarIVA = document.getElementById("btn-agregarProducto")
+let inputProducto = document.getElementById("nombreProducto")
+let inputPrecio = document.getElementById("nombrePrecio")
+let reset_form = document.getElementById("reset_form")
+let inputDolarOficial = document.getElementById("inputDolarOficial");
+let inputSinImpuestos = document.getElementById("inputSinImpuestos");
+let inputIMPpais = document.getElementById("inputIMP-pais");
+let inputIMPganancia = document.getElementById("inputIMP-ganancia");
+let inputQatar = document.getElementById("inputQatar");
+let checkbox = document.getElementById("flexCheck")
+let btnTotal = document.getElementById("totalCimp")
+let inputCalculo = document.getElementById("calculador");
+let coincidencia = document.getElementById("coincidencia")
+let mayorMenor = document.getElementById("mayorMenor")
+let menorMayor = document.getElementById("menorMayor")
+let buscador = document.getElementById("buscador")
 
 
+
+
+// Ver y ocultar el catologo
 VERhistorialProductos.onclick = () =>{
     VerOcultarElhistorial()
 }
@@ -54,35 +74,50 @@ function VerOcultarElhistorial(array){
 }
 
 
+
 function verHistorial(array){
-    historialProductos.innerHTML = ""
+    historialProductos.classList.add("mt-3")
+    historialProductos.innerHTML = `
+    <table class="table">
+    <thead>
+    <tr>
+    <th scope="col-12">#</th>
+    <th scope="col-12">Producto</th>
+    <th scope="col-12">S/IVA</th>
+    <th scope="col-12">C/IVA</th>
+  </tr>
+    </thead>
+  </table>
+    `
     for (let productos of array){
         let nuevoProducto = document.createElement("ul")
-        nuevoProducto.classList.add("my-2")
         nuevoProducto.innerHTML = `
-        <ul class="list-group list-group-horizontal" id="${productos.id}">
-        <li class="list-group-item node-bg">${productos.id}</li>
-        <li class="list-group-item node-bg">${productos.producto}</li>
-        <li class="list-group-item node-bg">S/IVA $${productos.precio}</li>
-        <li class="list-group-item node-bg">C/IVA $${productos.precioIVA}</li>
-      </ul>
+        <table class="table align-middle">
+        <tbody id="historial-btn ">
+          <tr>
+            <th scope="row">${productos.id}</th>
+            <td>${productos.producto}</td>
+            <td>$${productos.precio}</td>
+            <td>$${productos.precioIVA}</td>
+          </tr>
+        </tbody>
+      </table>
         `
         historialProductos.appendChild(nuevoProducto)
     }
 }
 
-// agregar productos
+// EVENTOS
 
-let botonAgregarIVA = document.getElementById("btn-agregarProducto")
 botonAgregarIVA.addEventListener("click", () => {cargarProducto(estanteria)})
 
 
-let inputProducto = document.getElementById("nombreProducto")
-let inputPrecio = document.getElementById("nombrePrecio")
 
 
 
 function cargarProducto(array) {
+
+
     let inputProducto = document.getElementById("nombreProducto");
     let inputPrecio = document.getElementById("nombrePrecio");
     let IVA = inputPrecio.value * 1.21;
@@ -95,6 +130,7 @@ function cargarProducto(array) {
             title: 'El producto se agrego correctamente',
             background: '#fff ',
             color: 'black',
+            timer: 1500,
             confirmButtonColor: 'black',
             iconColor: '#33c733',
             backdrop: `#33c733
@@ -106,6 +142,7 @@ function cargarProducto(array) {
             title: 'ERROR',
             text: 'Por favor complete todos los campos',
             background: '#fffd',
+            timer: 1500,
             color: 'black',
             confirmButtonColor: 'black',
             iconColor: 'red',
@@ -119,16 +156,6 @@ function cargarProducto(array) {
 
 
 
-let inputDolarOficial = document.getElementById("inputDolarOficial");
-let inputSinImpuestos = document.getElementById("inputSinImpuestos");
-let inputIMPpais = document.getElementById("inputIMP-pais");
-let inputIMPganancia = document.getElementById("inputIMP-ganancia");
-let inputQatar = document.getElementById("inputQatar");
-let checkbox = document.getElementById("flexCheck")
-let btnTotal = document.getElementById("totalCimp")
-let inputCalculo = document.getElementById("calculador");
-let coincidencia = document.getElementById("coincidencia")
-
 
 
 // valor dolar estatico
@@ -137,7 +164,6 @@ inputDolarOficial.innerHTML = `$${valorDolar}`
 // calculo total de impuestos
 inputDolarOficial.innerHTML = `$${valorDolar}`
 inputCalculo.addEventListener("input",function(){
-    
     multi(valorDolar, inputCalculo.value)
     let sinImpuestos = multi(valorDolar, inputCalculo.value);
     inputSinImpuestos.innerHTML = `$${sinImpuestos}`
@@ -168,8 +194,7 @@ inputCalculo.addEventListener("input",function(){
 
 // ordenar historial
 
-let mayorMenor = document.getElementById("mayorMenor")
-let menorMayor = document.getElementById("menorMayor")
+
 
 mayorMenor.onclick = function(){
     ordenarMayormenor(estanteria)
@@ -178,7 +203,6 @@ menorMayor.onclick = function(){
     ordenarMenormayor(estanteria)
 }
 
-let buscador = document.getElementById("buscador")
 buscador.addEventListener("input", ()=>{
     buscarInfo(buscador.value, estanteria)
 })

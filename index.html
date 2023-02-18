@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/main.css">
     <link rel="shortcut icon" href="./media/FONDO NEGRO.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>BRAVE - INICIO</title>
     
 </head>
@@ -16,13 +18,13 @@
             <form class="form-main ">
                 <ul class="nav nav-tabs d-flex tab-style justify-content-center " id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">IMPUESTOS</button>
+                    <button class="nav-link active font-tab" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">IMPUESTOS</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">IVA</button>
+                    <button class="nav-link font-tab" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">IVA</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">HISTORIAL (IVA)</button>
+                    <button class="nav-link font-tab" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">HISTORIAL (IVA)</button>
                   </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -30,11 +32,12 @@
                     <div class="content">
                       <div class="d-flex flex-column align-items-center ">
                         <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="100" >
-                        <h1 class="mb-3">BRAVE</h1>
+                        <h1 class="mb-3 title-brave ">BRAVE</h1>
                       </div>
                         <h6 class="mb-3" >Ingresa un monto para calcular los impuestos</h6>
                         <div class="input-group mb-3">
                           <input id="calculador" type="number" class="form-control" placeholder="$" >
+                          
                         </div>
                         <div class="d-flex justify-content-between mt-3">
                           <p>Cotización dólar oficial</p>
@@ -72,11 +75,11 @@
                     <div class="content">
                       <div class="d-flex flex-column align-items-center ">
                           <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="100">
-                          <h1 class="mb-3">BRAVE</h1>
+                          <h1 class="mb-3 title-brave ">BRAVE</h1>
                       </div>
                       <h6 class="mb-3" >Ingrese un producto para calcular el IVA</h6>
-                      <div class="row">
-                        <div class="col">
+                      <div class="row" id="reset_form">
+                        <div class="col " >
                           <input type="text" id="nombreProducto" class="form-control" placeholder="Producto" aria-label="Producto">
                         </div>
                         <div class="col">
@@ -92,14 +95,16 @@
                     <div class="content-historial">
                       <div class="d-flex flex-column align-items-center ">
                         <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="100">
-                        <h1 class="mb-3">BRAVE</h1>
+                        <h1 class="mb-3 title-brave">BRAVE</h1>
                       </div>
                       <div id="container">
-                        <button type="button" id="btn-historial" class="btn rrr mb-3 btn-calculo" >VER HISTORIAL</button>
+                        
+                        <button type="button" id="btn-historial" class="btn rrr mb-3 btn-calculo" ><i style="font-size: 1.2rem; letter-spacing: 0.25em;" class="bi bi-search"></i>VER HISTORIAL</button>
                       </div>
                       
-                      <div class="dropdown container d-flex">
+                      <div class="dropdown container d-flex ">
                         <form class="d-flex" role="search">
+                          
                           <input id="buscador" class="form-control me-2" type="search" placeholder="Busqueda por producto" aria-label="Search">
                           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             ORDENAR DE
@@ -110,14 +115,12 @@
                           <li><button id="menorMayor" class="dropdown-item" type="button">Menor a mayor</button></li>
                         </ul>
                       </div>
-                      <div class="mt-4" id="coincidencia" ></div>
-                      <div class="container node-bg"  id="historial-btn"></div>
+                      <div class="animate__slideInDown" id="historial-btn">
                       </div>
-                    <div class="container node-bg"  id="historial-btn">
-                  </div>
+                      <div class="my-2" id="coincidencia" ></div>
+                      </div>
                 </div>
           </form>
-          
         </main>        
     </body>
 <script src="./js/script.js"></script>

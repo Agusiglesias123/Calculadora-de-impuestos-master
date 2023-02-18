@@ -1,4 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Righteous&family=Roboto&family=Signika+Negative:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Righteous&family=Roboto&family=Signika+Negative:wght@500&display=swap");
+.title-brave {
+  font-family: 'Kanit', sans-serif;
+  font-size: 3rem;
+}
+
+.font-tab {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+}
+
 h1,
 h2,
 h3,
@@ -20,8 +31,7 @@ i,
   border: 0;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
-  color: inherit;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Signika Negative', sans-serif;
 }
 
 h1:focus,
